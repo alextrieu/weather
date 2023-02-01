@@ -4,18 +4,15 @@ export default function Location({ data }) {
   let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
 
   return (
-    <>
+    <div>
       { Object.keys(data).length ? (
-        <>
-          {/* City */}
-          {/* {console.log(data.name)} */}
-          {/* {Country} */}
-          {/* {console.log(data.sys.country)} */}
-          <p>{data.name}, {regionNames.of(data.sys.country)}</p>
-        </>
+        <div className='location-data'>
+          <p>{data.name}</p>
+          <p className='right-aligned'>{regionNames.of(data.sys.country)}</p> 
+        </div>
       ) : (
         <p>Loading weather data...</p>
       )}
-    </>
+    </div>
   )
 }

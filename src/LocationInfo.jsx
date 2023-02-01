@@ -4,9 +4,9 @@ import DateTime from './DateTime'
 
 export function LocationInfo({ data }) {
   return (
-    <>
-        <Location data={data}/>
+    <div className='header-info'>
         <DateTime />
-    </>
+        <Location data={data}/>
+    </div>
   )
 }

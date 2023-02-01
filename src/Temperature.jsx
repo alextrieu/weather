@@ -8,11 +8,15 @@ export function Temperature({ data }) {
   return (
     <>
       { Object.keys(data).length ? (
-        <>
-          {/* different types of weather */}
-          <p>{data.weather[0].main}</p>
-          <p>Temperature: {fahrenheitToCelsius(data.main.temp)}°C</p>
-        </>
+        <div className='weather-info'>
+          <div className='temperature'>
+            <i class="fa-regular fa-snowflake"></i>
+            {data.weather[0].main}
+          </div>
+          <div className='fahrenheit'>
+            {fahrenheitToCelsius(data.main.temp)}°C
+          </div>
+        </div>
       ) : (
         <p>Loading weather data...</p>
       )}

@@ -6,7 +6,7 @@ export default function DateTime() {
     let currentTime = new Date();
     let hours = currentTime.getHours();
     let minutes = currentTime.getMinutes();
-    let ampm = hours >= 12 ? 'pm' : 'am';
+    let ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
     hours = hours ? hours : 12;
     return hours + ':' + minutes + ' ' + ampm
@@ -26,9 +26,9 @@ export default function DateTime() {
   }
 
   return (
-    <div>
-      {getTime()}
-      {getDate()}
+    <div className='date-time-container'>
+      <p>{getTime()}</p>
+      <p>{getDate()}</p>
     </div>
   )
 }

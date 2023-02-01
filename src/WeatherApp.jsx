@@ -37,14 +37,12 @@ export default function WeatherApp() {
   }, [location]);
 
   return (
-    <div className="App">
+    <div className="app-container">
         <LocationInfo data={weather}/>
         <WeatherData data={weather}/>
-      <h1>Your Location</h1>
+      {/* <h1>Your Location</h1>
       <p>Latitude: {location.lat}</p>
-      <p>Longitude: {location.lng}</p>
-      <div>
-    </div>
+      <p>Longitude: {location.lng}</p> */}
     </div>
   )
 }

@@ -30,20 +30,39 @@ export default function WeatherApp() {
 
       setWeather(data);
     };
+    
     fetchData()
       .catch(error => {
         console.error(error);
       });
   }, [location]);
 
+  const [image, setImage] = useState(null);
+  const keyword = weather.name;
+  useEffect(() => {
+    const fetchImage = async () => {
+      const response = await fetch(
+        `https://api.unsplash.com/search/photos?query=${keyword}&client_id=BzSfVucYTI5CJ6qniGcyLfBul-fmqCuBl5UF4HOZ--A`
+      );
+      const data = await response.json();
+      setImage(data.results[1].urls.full);
+    };
+
+    fetchImage();
+  }, [keyword]);
+
   return (
-    <div className="app-container">
+    <main className='app-container'>
+      <div className="hero-section" style={{ 
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover' 
+      }}>
         <LocationInfo data={weather}/>
+      </div> 
+      <div className='footer'>
         <WeatherData data={weather}/>
-      {/* <h1>Your Location</h1>
-      <p>Latitude: {location.lat}</p>
-      <p>Longitude: {location.lng}</p> */}
-    </div>
+      </div>
+    </main>
   )
 }
 

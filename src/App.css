@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: black;
 }
 
 /* Main Component */
@@ -9,52 +10,48 @@
 .app-container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+}
+.hero-section {
     width: 100%;
-    height: 100%;
-
+    height: 70%;
 }
 
-.weather-data-container {
-    height: 30vh;
-    margin: 0 auto;
-    width: 80%;
+.footer {
+    height: 30%;
 }
 
-/* Location Info */
+/* Location Component */
 
 .header-info {
-    height: 70vh;
     width: 80%;
+    height: 100%;
+    margin: 50px auto;
     display: flex;
     justify-content: space-between;
-    padding-top: 50px;
-    margin: 0 auto;
 }
 
-.location-data {
-    display: flex;
-    flex-direction: column;
+.timestamp-container p:first-child, .location-data p:first-child {
+    margin-bottom: 15px;
+}
+
+.location-details:first-child {
+    font-size: 2.25rem;
+}
+
+.location-details:nth-child(2) {
+    font-size: 1.25rem;
 }
 
 .right-aligned {
     text-align: right;
 }
 
-/* Date Time */ 
-
-.date-time-container p:first-child, .location-data p:first-child {
-    font-size: 1.75rem;
-    margin-bottom: 15px;
-}
-
+/* Weather Component */
 
 .weather-data-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.humidity-sunrise-sunset {
-    flex: 6;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     height: 100%;
@@ -62,35 +59,49 @@
 }
 
 .weather-info {
-    flex: 4;
-    height: 100%;
     display: flex;
     gap: 50px;
-    align-items: center;
 }
 
 .temperature {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: center;
+    gap: 10px;
 }
 
-.fa-regular, .fahrenheit {
-    font-size: 3rem;
+.temperature p {
+    font-size: 1.5rem;
 }
 
-.fa-solid {
-    font-size: 2rem;
+.degree {
+    align-self: center;
+    font-size: 2.5rem;
 }
 
-.e-data {
+.atmospheric-conditions {
+    display: flex;
+    gap: 100px;
+    height: 100%;
+}
+
+.enviromental-data {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    justify-content: center;
+    font-size: 1.15rem;
 }
 
 hr {
     width: 30px;
+    height: 1px;
+    border: none;
+    background-color: rgb(231, 89, 212);
 }
+
+.fa-icon {
+    font-size: 3rem;
+}
+

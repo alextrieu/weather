@@ -7,8 +7,8 @@ export default function Location({ data }) {
     <div>
       { Object.keys(data).length ? (
         <div className='location-data'>
-          <p>{data.name}</p>
-          <p className='right-aligned'>{regionNames.of(data.sys.country)}</p> 
+          <p className='location-details'>{data.name}</p>
+          <p className='right-aligned location-details'>{regionNames.of(data.sys.country)}</p> 
         </div>
       ) : (
         <p>Loading weather data...</p>

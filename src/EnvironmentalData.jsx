@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export function EnvironmentalData({ data }) {
 
@@ -12,28 +12,47 @@ export function EnvironmentalData({ data }) {
     let formattedTime = hours + ':' + minutes.substr(-2) + ' ' + ampm;
     return formattedTime;
   }
+  
+  const climateData = Object.keys(data).length ? [
+    {
+      name: "humidity",
+      icon: "fa-droplet",
+      data: data.main.humidity + "%"
+    },
+    {
+      name: "sunrise",
+      icon: "fa-sun",
+      data: timeConverter(data.sys.sunrise)
+    },
+    {
+      name: "sunset",
+      icon: "fa-mountain-sun",
+      data: timeConverter(data.sys.sunset)
+    }
+  ] : [];
+
+  
+  function capitalizeFirstLetter(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
+  
+
   return (
     <>
       { Object.keys(data).length ? (
-        <div className='humidity-sunrise-sunset'>
-          <div className='e-data humidity'>
-            <i class="fa-solid fa-droplet"></i>
-            <p>Humidity</p>
-            <hr></hr>
-            {data.main.humidity}%
-          </div>
-          <div className='e-data sunrise'>
-            <i class="fa-solid fa-sun"></i>
-            <p>Sunrise</p>
-            <hr></hr>
-            {timeConverter(data.sys.sunrise)}
-          </div>
-          <div className='e-data sunset'>
-            <i class="fa-solid fa-mountain-sun"></i>
-            <p>Sunset</p>
-            <hr></hr>
-            {timeConverter(data.sys.sunset)}
-          </div>
+        <div className='atmospheric-conditions'>
+            { climateData.map((climate, index) => {
+              return (
+                <>
+                  <div className={`enviromental-data ${climate.name}`}>
+                    <i className={`fa-solid ${climate.icon}`}></i>
+                    <p>{capitalizeFirstLetter(climate.name)}</p>
+                    <hr></hr>
+                    <p>{climate.data}</p>
+                  </div>
+                </>
+              )}) 
+            }
         </div>
       ) : (
         <p>Loading weather data...</p>

@@ -26,9 +26,9 @@ export default function DateTime() {
   }
 
   return (
-    <div className='date-time-container'>
-      <p>{getTime()}</p>
-      <p>{getDate()}</p>
+    <div className='timestamp-container'>
+      <p className='location-details'>{getTime()}</p>
+      <p className='location-details'>{getDate()}</p>
     </div>
   )
 }

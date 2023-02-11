@@ -7,8 +7,8 @@ import './App.css'
 export default function WeatherApp() {  
   const [location, setLocation] = useState({});
   const [weather, setWeather] = useState({});
-  const apiKey = "5a5cf46984a904ea36fbbbdcb420b875";
   const units = "imperial";
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(position => {

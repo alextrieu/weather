@@ -15,7 +15,7 @@ export function useBackgroundImage(city) {
           )
         };
         const data = await response.json();
-        setImage(data.results[1].urls.full);
+        setImage(data.results[2].urls.full);
       } catch(error) {
         console.error(error);
       }

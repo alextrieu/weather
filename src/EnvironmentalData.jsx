@@ -48,7 +48,7 @@ export function EnvironmentalData({ data }) {
                     <i className={`fa-solid ${climate.icon}`}></i>
                     <p>{capitalizeFirstLetter(climate.name)}</p>
                     <hr></hr>
-                    <p>{climate.data}</p>
+                    <p className='card-footer'>{climate.data}</p>
                   </div>
                 </>
               )}) 

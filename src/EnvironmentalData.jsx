@@ -40,11 +40,11 @@ export function EnvironmentalData({ data }) {
   return (
     <>
       { Object.keys(data).length ? (
-        <div className='atmospheric-conditions'>
+        <div className='card-container'>
             { climateData.map((climate, index) => {
               return (
                 <>
-                  <div className={`enviromental-data ${climate.name}`}>
+                  <div className={`card-data ${climate.name}`}>
                     <i className={`fa-solid ${climate.icon}`}></i>
                     <p>{capitalizeFirstLetter(climate.name)}</p>
                     <hr></hr>

@@ -10,6 +10,8 @@ With MyWeather, you can easily access current weather conditions, including temp
 - [Introduction](#introduction)
 - [Demo](#demo)
 - [Technology Stack](#technology)
+- [Desktop Version](#desktop-version)
+- [Mobile Version](#mobile-version)
 - [Installation & Usage](#installation--usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -26,6 +28,19 @@ View the application [here](https://weather-alextrieu.vercel.app/)
 ## Technology
 
 This application was built using HTML, CSS, and React, and is hosted on Vercel.
+
+## Desktop Version
+
+Here is a screenshot of the desktop version of our application:
+
+<img src="https://i.imgur.com/HvifbWe.png" alt="Alt text" width="50%">
+
+## Mobile Version
+
+Here is a screenshot of the mobile version of our application:
+
+<img src="https://i.imgur.com/njlkyIi.png" alt="Alt text" width="50%">
+
 
 ## Installation & Usage 
 
